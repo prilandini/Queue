@@ -1,5 +1,7 @@
 <?php
 
+use App\Jobs\sendEmailJobs;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +15,9 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/sendEmail', function () {
+    dispatch(new SendEmailJobs());
+    return ('Success');
 });
